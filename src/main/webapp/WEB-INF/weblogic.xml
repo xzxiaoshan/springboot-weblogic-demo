@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<weblogic-web-app xmlns="http://xmlns.oracle.com/weblogic/weblogic-web-app"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://xmlns.oracle.com/weblogic/weblogic-web-app
+                  http://xmlns.oracle.com/weblogic/weblogic-web-app/1.4/weblogic-web-app.xsd">
+
+    <container-descriptor>
+        <prefer-application-packages>
+            <!--解决项目中jackson的jar包和weblogic中thirdparty的jar包冲突问题，配置优先加载项目中的jar-->
+            <package-name>org.slf4j</package-name>
+            <package-name>javax.validation.*</package-name>
+            <package-name>org.hibernate.*</package-name>
+            <package-name>javax.el.*</package-name>
+            <package-name>org.springframework.*</package-name>
+            <package-name>com.fasterxml.jackson.*</package-name>
+        </prefer-application-packages>
+    </container-descriptor>
+
+    <context-root>/springboot-weblogic-demo</context-root>
+
+</weblogic-web-app>
